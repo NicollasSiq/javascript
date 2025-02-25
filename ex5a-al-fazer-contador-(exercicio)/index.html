@@ -1,1 +1,47 @@
- <!-- 1ª Digitação (Resolva aqui o exercício) -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Cliques</title>
+    <style>
+        #contador {
+            font-size: 20px;
+            padding: 10px;
+            margin-top: 10px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+<body>
+    <button onclick="incrementar()">Clique Aqui</button>
+    <p id="contador">Contador: 0</p>
+
+    <script>
+        let contador = 0;
+
+        function incrementar() {
+            contador++;
+            const paragrafo = document.getElementById('contador');
+            
+            paragrafo.textContent = `Contador: ${contador}`;
+
+            // Altera a cor de fundo dependendo se o contador é par ou ímpar
+            if (contador % 2 === 0) {
+                paragrafo.style.backgroundColor = 'green';
+            } else {
+                paragrafo.style.backgroundColor = 'red';
+            }
+        }
+    </script>
+</body>
+</html>

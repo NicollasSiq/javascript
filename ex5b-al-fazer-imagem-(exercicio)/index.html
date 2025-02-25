@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -55,8 +53,6 @@
 <body>
   <!-- Contêiner para a imagem e o texto -->
   <div class="image-container">
-    <!-- Imagem que será alterada -->
-    <img id="myImage" src="image.png" alt="Imagem 1">
 
     <!-- Texto principal que será modificado -->
     <p id="myText">Passe o mouse sobre a imagem</p>
@@ -64,14 +60,27 @@
     <!-- Texto adicional -->
     <p class="subtext" id="subText">Sabrina Carpenter - Linda!</p>
   </div>
+    <div class="imagem-container">
+        <img id="imagem" src="https://via.placeholder.com/300x200" alt="Imagem Original">
+        <p id="texto">Passe o mouse sobre a imagem para vê-la mudar.</p>
+    </div>
 
-  <!-- Script JavaScript embutido na página -->
-  <script>
+    <script>
+        // Selecionando os elementos
+        const imagem = document.getElementById('imagem');
+        const texto = document.getElementById('texto');
 
+        // Função que muda a imagem e o texto
+        imagem.addEventListener('mouseover', function() {
+            imagem.src = 'image2.png'; // Nova imagem
+            texto.textContent = 'A imagem foi alterada!'; // Texto indicando a mudança
+        });
 
-    // 1ª Digitação (Resolva aqui o exercício)
-
-
-  </script>
+        // Função que volta para a imagem original e o texto
+        imagem.addEventListener('mouseout', function() {
+            imagem.src = 'image.png'; // Imagem original
+            texto.textContent = 'Passe o mouse sobre a imagem para vê-la mudar.'; // Texto inicial
+        });
+    </script>
 </body>
 </html>
