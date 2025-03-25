@@ -21,9 +21,12 @@ nav {
 }
 
 /* Estilo do ícone do menu hambúrguer */
-/* .menu-icon {
-
-  2ª Digitação (Aqui) 
+.menu-icon {
+  display: none; /* Não exibe em telas grandes */
+  font-family: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
 
 } */
 
@@ -50,14 +53,20 @@ nav {
 
 /* Estilos para telas pequenas (max-width: 768px) */
 @media (max-width: 768px) {
-  /* .menu-icon {
-
-    3ª Digitação (Aqui)
+  .menu-icon {
+    display: block;
+  /* Exibir em bloco (telas pequenas) */
     
   }
 
   .nav-list {
-
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    left: 0;
   } */
 
   .nav-list li {

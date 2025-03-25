@@ -42,15 +42,57 @@
   <div id="timer">0</div>
 
   <!-- Botões de controle -->
-  <button id="startButton">Iniciar</button>
-  <button id="pauseButton">Pausar</button>
-  <button id="resetButton">Resetar</button>
+  <button id="startBtn">Iniciar</button>
+  <button id="pauseBtn">Pausar</button>
+  <button id="resetBtn">Resetar</button>
 
   <!-- Script JavaScript embutido na página -->
   <script>
 
 
-    // 1ª Digitação (Resolva aqui o exercício)
+        let timerValue = 0;
+        let timerInterval;
+        let isRunning = false;
+
+        const timerDisplay = document.getElementById('timer');
+        const startBtn = document.getElementById('startBtn');
+        const pauseBtn = document.getElementById('pauseBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        // Função para iniciar o temporizador
+        function startTimer() {
+            isRunning = true;
+            startBtn.disabled = true;
+            pauseBtn.disabled = false;
+            resetBtn.disabled = false;
+            timerInterval = setInterval(() => {
+                timerValue++;
+                timerDisplay.textContent = timerValue;
+            }, 1000);
+        }
+
+        // Função para pausar o temporizador
+        function pauseTimer() {
+            isRunning = false;
+            clearInterval(timerInterval);
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+        }
+
+        // Função para resetar o temporizador
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerValue = 0;
+            timerDisplay.textContent = timerValue;
+            startBtn.disabled = false;
+            pauseBtn.disabled = true;
+            resetBtn.disabled = true;
+        }
+
+        // Adicionando eventos aos botões
+        startBtn.addEventListener('click', startTimer);
+        pauseBtn.addEventListener('click', pauseTimer);
+        resetBtn.addEventListener('click', resetTimer);
 
 
   </script>
